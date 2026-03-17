@@ -61,7 +61,9 @@ cd mini-wallet-transaction-API
 npm install
 ```
 
-3. Start the application:
+3. Review the available environment variables in [`.env.example`](./.env.example).
+
+4. Start the application:
 
 ```bash
 npm start
@@ -73,10 +75,27 @@ For development with auto-reload:
 npm run dev
 ```
 
+To override defaults from the shell:
+
+```bash
+PORT=4000 DB_PATH=wallet.db npm start
+```
+
+## Environment Variables
+
+The supported environment variables are documented in [`.env.example`](./.env.example).
+
+| Variable | Default | Description |
+| --- | --- | --- |
+| `PORT` | `3000` | Port used by the Express server |
+| `DB_PATH` | `wallet.db` | Path to the SQLite database file |
+
+Note: the app currently reads environment variables from the shell environment via `process.env`. The `.env.example` file is included as a reference template.
+
 ## How the App Runs
 
-- The API starts on `http://localhost:3000`
-- SQLite database file: `wallet.db`
+- The API starts on `http://localhost:3000` by default
+- SQLite database file defaults to `wallet.db`
 - Tables are created automatically on startup
 
 Base URL:

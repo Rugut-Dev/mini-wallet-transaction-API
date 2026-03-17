@@ -7,7 +7,7 @@ const createWalletRouter = require("./routes/walletRoutes");
 const WalletService = require("./services/WalletService");
 
 const app = express();
-const PORT = 3000;
+const PORT = Number(process.env.PORT) || 3000;
 
 const walletRepository = new WalletRepository(db);
 const transactionRepository = new TransactionRepository(db);

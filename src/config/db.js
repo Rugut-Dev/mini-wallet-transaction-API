@@ -1,7 +1,7 @@
 const path = require("path");
 const sqlite3 = require("sqlite3").verbose();
 
-const dbPath = path.resolve(__dirname, "../../wallet.db");
+const dbPath = path.resolve(__dirname, "../../", process.env.DB_PATH || "wallet.db");
 const db = new sqlite3.Database(dbPath, (error) => {
   if (error) {
     console.error("Failed to connect to SQLite database:", error.message);
